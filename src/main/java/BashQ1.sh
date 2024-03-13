@@ -101,8 +101,8 @@ while true; do
     print_done
     delete_task
     print_delete_task
-    search_done
     search_todo
+    search_done
     search_deleted
 done
 
