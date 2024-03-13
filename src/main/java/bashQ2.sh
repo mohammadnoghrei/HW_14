@@ -1,40 +1,32 @@
 
-function greet_user() {
-    touch a.txt b.txt c.txt d.txt
+function creat_files() {
+    touch 1.txt 2.txt 3.txt 4.txt
     echo "create files"
 }
 
 function add_word() {
 
-    echo "hello world" > a.txt
-    echo "hello world" > b.txt
-    echo "hello world" > c.txt
-    echo "hello world" > d.txt
-    echo "add words to files"
+    for i in {1..4}; do
+    echo "hello world" > $i.txt
+    done
+    echo "add word"
 }
 
 
 function set_word() {
 
-    sed -i -e 's/hello/bash' a.txt
-    sed -i -e 's/hello/bash' b.txt
-    sed -i -e 's/hello/bash' c.txt
-    sed -i -e 's/hello/bash' d.txt
+    for i in {1..4}; do
+        sed -i -e 's/hello/bash/g' $i.txt
+        done
     echo "change word"
 }
 
-# Call the function with an argument
 
-
-
-# Call the function with an argument
 PS3="please choose a number:"
-select word in "create file" "add_word" "set_word"
+select word in "creat_files" "add_word" "set_word"
 do
 	$word
 	break
 done
 
 
-# Output:
-# Hello, Anton!
